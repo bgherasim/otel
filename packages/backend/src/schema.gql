@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Author {
+  firstName: String
+  id: Int!
+  lastName: String
+  posts: [Post!]!
+}
+
+input InputAuthor {
+  firstName: String
+  id: Int!
+  lastName: String
+  posts: [InputPost!]
+}
+
+input InputPost {
+  id: Int!
+  title: String!
+  votes: Int
+}
+
+type Mutation {
+  createPost(author: InputAuthor!): Author!
+}
+
+type Post {
+  id: Int!
+  title: String!
+  votes: Int
+}
+
+type Query {
+  author(id: Int!): Author
+}
